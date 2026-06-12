@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caribbean International - Under Upgrade</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 60px;
+            align-items: center;
+        }
+
+        .text-section h1 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .text-section .subtitle {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .text-section p {
+            font-size: 1em;
+            color: #777;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-top: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .images-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .images-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .images-section img:hover {
+            transform: scale(1.02);
+        }
+
+        .contact-info {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 2px solid #eee;
+        }
+
+        .contact-info p {
+            color: #999;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+
+        .contact-info a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #764ba2;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 40px 30px;
+            }
+
+            .text-section h1 {
+                font-size: 2em;
+            }
+
+            .text-section .subtitle {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="text-section">
+                <h1>Caribbean International</h1>
+                <p class="subtitle">🌊 Coming Soon with Something Amazing</p>
+                <p>Our website is undergoing an exciting upgrade to better serve you. We're redesigning our digital presence to bring you an enhanced experience with improved services and features.</p>
+                <p>We're working hard to deliver something extraordinary. Thank you for your patience!</p>
+                <div class="status-badge">✨ Under Upgrade</div>
+                <div class="contact-info">
+                    <p><strong>Get in touch:</strong></p>
+                    <p>Email: <a href="mailto:info@caribbeaninternational.com">info@caribbeaninternational.com</a></p>
+                    <p>Follow our progress and stay connected!</p>
+                </div>
+            </div>
+            <div class="images-section">
+                <img src="images/site1.jpeg" alt="Caribbean International - Preview 1">
+                <img src="images/site2.jpeg" alt="Caribbean International - Preview 2">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
