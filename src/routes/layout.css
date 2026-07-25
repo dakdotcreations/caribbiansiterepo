@@ -1,1 +1,55 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+	/* Colors */
+	--color-background: #f8f9fa; /* Crisp off-white */
+	--color-foreground: #1e2229; /* Dark charcoal */
+	--color-primary: #00a3e0; /* Trust blue from logo */
+	--color-primary-dark: #007ea8;
+	--color-accent: #e52421; /* Hazard red - restricted use */
+
+	/* Typography */
+	/* Condensed Industrial Display Face */
+	--font-display: "Oswald", system-ui, sans-serif;
+	/* Body */
+	--font-sans: "Inter", system-ui, sans-serif;
+	/* Stats / Specs */
+	--font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+	body {
+		@apply bg-background text-foreground font-sans antialiased selection:bg-primary selection:text-white overflow-x-hidden;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-display tracking-tight uppercase;
+	}
+}
+
+/* Engineering Blueprint & Architectural Grid Styling */
+@layer utilities {
+	.bg-blueprint {
+		background-image:
+			linear-gradient(to right, rgba(30, 34, 41, 0.05) 1px, transparent 1px),
+			linear-gradient(to bottom, rgba(30, 34, 41, 0.05) 1px, transparent 1px);
+		background-size: 60px 60px;
+	}
+
+	.border-grid {
+		@apply border-foreground/10;
+	}
+
+	.text-glow-primary {
+		text-shadow: 0 0 20px rgba(0, 163, 224, 0.3);
+	}
+    .clip-path-diagonal {
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    }
+}
+
