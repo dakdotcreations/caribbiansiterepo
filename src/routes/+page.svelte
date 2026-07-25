@@ -11,7 +11,7 @@
 		FileText,
 		ChevronRight,
 		Download,
-		CheckCircle2,
+		CircleCheck,
 		Truck,
 		Users,
 		Layers,
@@ -39,7 +39,7 @@
 				secondary: "2x 15MVA Transformers",
 				scale: "Regional Grid",
 			},
-			image: "IMG-20260723-WA0007.jpg", // Logo / Technical graphic
+			image: "Power_substation.jpeg", // Logo / Technical graphic
 			description:
 				"Complete design, installation, and commissioning of heavy step-down transformers and backup synchronized generator plants for high-load commercial facilities.",
 		},
@@ -55,7 +55,7 @@
 				secondary: "Structural Reinforced Concrete",
 				scale: "14,500 m²",
 			},
-			image: "IMG-20260611-WA0008.jpg", // Team photo on rooftop site
+			image: "Commercial_center.jpeg", // Team photo on rooftop site
 			description:
 				"Turnkey structural concrete erection, high-rise framing, curtain wall integration, and interior mechanical & electrical systems fit-out.",
 		},
@@ -71,7 +71,7 @@
 				secondary: "8,200 m³ Concrete",
 				scale: "Class-A Highway",
 			},
-			image: "IMG-20260611-WA0007.jpg", // Site engineers in PPE on bridge deck
+			image: "Highway_bypass.jpeg", // Site engineers in PPE on bridge deck
 			description:
 				"Comprehensive earthworks, site leveling, heavy asphalt surfacing, reinforced retaining walls, and municipal storm drainage networks.",
 		},
@@ -114,31 +114,35 @@
 			ease: "back.out(1.4)",
 		})
 
-		// Core Services Cards Reveal
-		gsap.from(".gsap-service-card", {
-			scrollTrigger: {
-				trigger: "#services",
-				start: "top 75%",
-			},
-			y: 50,
-			opacity: 0,
-			duration: 0.9,
-			stagger: 0.2,
-			ease: "power3.out",
-		})
+        gsap.from('.gsap-service-card', {
+            opacity: 0,
+            y: 200,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '#services',
+                start: 'top 85%',
+                end: 'top top',
+                // toggleActions: 'play none none reverse',
+                scrub: 1
+            }
+        })
 
-		// Project Rows Scroll Trigger
-		gsap.from(".gsap-project-card", {
-			scrollTrigger: {
-				trigger: "#projects",
-				start: "top 75%",
-			},
-			y: 40,
-			opacity: 0,
-			duration: 0.8,
-			stagger: 0.15,
-			ease: "power2.out",
-		})
+        gsap.from('.gsap-project-card', {
+            opacity: 0,
+            y: 200,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: 'power2.out',
+            scrollTrigger: {
+                trigger: '#projects',
+                start: 'top 85%',
+                end: 'top top',
+                // toggleActions: 'play none none reverse',
+                scrub: 1
+            }
+        })
 
 		// Safety Banner Reveal
 		gsap.from(".gsap-safety-content", {
@@ -157,21 +161,18 @@
 <!-- =================================================================== -->
 <!-- HERO SECTION: High-Impact Corporate Enterprise Statement -->
 <!-- =================================================================== -->
-<section
-	class="relative bg-foreground text-background pt-24 pb-32 overflow-hidden bg-blueprint border-b-8 border-primary">
+<section class="relative bg-foreground text-background pt-16 pb-32 overflow-hidden bg-blueprint border-b-8 border-primary">
 	<!-- Architectural Accent Backdrop Elements -->
-	<div
-		class="absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 translate-x-32 pointer-events-none hidden lg:block">
+	<div class="absolute top-0 right-0 w-1/2 h-full bg-primary/10 -skew-x-12 translate-x-32 pointer-events-none hidden lg:block">
 	</div>
-	<div
-		class="absolute bottom-0 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none">
+	<div class="absolute bottom-0 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl pointer-events-none">
 	</div>
 
 	<div class="container mx-auto px-6 relative z-10">
 		<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 			<!-- Main Text Block -->
 			<div class="lg:col-span-8 space-y-8">
-				<div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 border border-white/20 text-primary font-mono text-xs uppercase">
+				<div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md px-4 py-2 border border-white/20 text-primary text-xs uppercase">
 					<HardHat class="w-4 h-4 text-primary" />
 					<span>Commercial Contractor & Industrial Engineering Firm</span>
 				</div>
@@ -179,15 +180,14 @@
 				<h1 class="space-y-2">
 					<div class="gsap-hero-title text-6xl md:text-8xl lg:text-9xl font-bold leading-none tracking-tight text-white">
 						BUILDING <br />
-						<span class="text-primary text-glow-primary">CAPACITY.</span>
+						<span class="text-primary">CAPACITY.</span>
 					</div>
-					<div class="gsap-hero-title text-5xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight text-white/40">
+					<div class="gsap-hero-title text-5xl md:text-7xl lg:text-8xl font-bold leading-none tracking-tight text-white/40 text-glow-background">
 						POWERING PROGRESS.
 					</div>
 				</h1>
 
-				<p
-					class="gsap-hero-sub text-lg md:text-2xl font-sans text-white/80 max-w-2xl font-light leading-relaxed">
+				<p class="gsap-hero-sub text-lg md:text-2xl font-sans text-white/80 max-w-2xl font-light leading-relaxed">
 					Caribbian International Ltd. executes turnkey commercial building projects,
 					high-voltage industrial electrical grids, and multi-sector civil road
 					infrastructure with zero safety compromise.
@@ -195,13 +195,11 @@
 
 				<!-- CTA Action Cluster -->
 				<div class="gsap-hero-sub flex flex-wrap gap-5 pt-4">
-					<a
-						href="#rfq"
+					<a href="#rfq"
 						class="bg-primary hover:bg-primary-dark text-white font-display text-lg uppercase tracking-wider px-8 py-5 transition-all duration-300 flex items-center gap-3 shadow-lg shadow-primary/20">
 						Submit Project Tender <ArrowUpRight class="w-5 h-5" />
 					</a>
-					<a
-						href="#services"
+					<a href="#services"
 						class="border border-white/30 hover:border-white text-white font-display text-lg uppercase tracking-wider px-8 py-5 hover:bg-white hover:text-foreground transition-all duration-300">
 						Explore Capabilities
 					</a>
@@ -214,7 +212,7 @@
 					class="relative border-2 border-white/20 p-3 bg-foreground/80 backdrop-blur-md shadow-2xl">
 					<!-- Image Tag Overlay -->
 					<div
-						class="absolute top-6 left-6 z-20 bg-foreground/90 px-3 py-1.5 border border-white/20 font-mono text-xs text-primary uppercase">
+						class="absolute top-6 left-6 z-20 bg-foreground/90 px-3 py-1.5 border border-white/20 text-xs text-primary uppercase">
 						On-Site Operations Team
 					</div>
 
@@ -227,7 +225,7 @@
 					</div>
 
 					<div
-						class="p-4 bg-white/5 border-t border-white/10 mt-3 font-mono text-xs text-white/70 space-y-1">
+						class="p-4 bg-white/5 border-t border-white/10 mt-3 text-xs text-white/70 space-y-1">
 						<div class="flex justify-between">
 							<span>PROJECT LEADERSHIP:</span>
 							<span class="text-white font-bold">100% On-Site PPE Compliant</span>
@@ -273,7 +271,7 @@
 				<div class="flex items-center justify-between mb-4">
 					<span
 						class="font-mono text-xs uppercase tracking-widest text-foreground/50 group-hover:text-primary"
-						>Completed Scope</span>
+						>Projects Completed</span>
 					<Briefcase class="w-5 h-5 text-primary" />
 				</div>
 				<p class="font-mono text-4xl lg:text-6xl font-bold tracking-tight mb-1">
@@ -328,12 +326,10 @@
 		<!-- Section Header -->
 		<div class="flex flex-col lg:flex-row lg:items-end justify-between mb-20 gap-8">
 			<div>
-				<span class="font-mono text-xs uppercase tracking-widest text-primary mb-3 block"
-					>Engineering & Contracting Capabilities</span>
-				<h2 class="text-5xl md:text-7xl font-bold text-foreground">CORE DISCIPLINES</h2>
+				<span class="font-mono text-xs uppercase text-primary mb-3 block">Engineering & Contracting Capabilities</span>
+				<h2 class="text-5xl md:text-7xl font-bold text-foreground">CORE SERVICES</h2>
 			</div>
-			<p
-				class="font-mono text-sm text-foreground/60 max-w-lg leading-relaxed border-l-2 border-primary pl-4">
+			<p class="text-sm text-foreground/60 max-w-lg leading-relaxed border-l-2 border-primary pl-4">
 				Our multi-disciplinary team eliminates operational friction by integrating civil
 				foundation, structural erection, and high-capacity electrical setups into one
 				unified delivery workflow.
@@ -343,154 +339,148 @@
 		<!-- 3 Core Service Pillars Cards Grid -->
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 			<!-- PILLAR 1: Industrial Electrical Work -->
-			<div
-				class="gsap-service-card bg-white border border-grid p-10 flex flex-col justify-between hover:border-primary transition-all duration-300 shadow-sm group">
-				<div>
-					<div
-						class="w-16 h-16 bg-foreground text-primary flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-						<Zap class="w-8 h-8" />
-					</div>
-
-					<span
-						class="font-mono text-xs text-primary uppercase tracking-widest mb-2 block"
-						>Pillar 01</span>
-					<h3 class="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
-						Industrial Electrical Systems
-					</h3>
-
-					<p class="font-sans text-foreground/70 leading-relaxed mb-8">
-						Complete high-voltage power distribution setups, commercial switchgear
-						integration, step-down transformer installations, and synchronized backup
-						generator power plants for manufacturing and industrial facilities.
-					</p>
-
-					<div
-						class="space-y-3 font-mono text-xs border-t border-grid pt-6 mb-8 text-foreground/80">
-						<div class="flex items-center gap-2">
-							<CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
-							<span>Heavy Duty Transformer Installation</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
-							<span>Automatic Switchgear & Panelboards</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
-							<span>Commercial Generator Synchronization</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
-							<span>High-Voltage Power Grid Distribution</span>
-						</div>
-					</div>
-				</div>
-
-				<a
-					href="#rfq"
-					class="inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider text-foreground group-hover:text-primary transition-colors">
-					Request Electrical Scope <ChevronRight class="w-4 h-4" />
-				</a>
-			</div>
+            <div class="gsap-service-card">
+                <div class="bg-white border border-grid p-10 flex flex-col justify-between hover:border-primary transition-all duration-300 shadow-sm group">
+                    <div>
+                        <div
+                            class="w-16 h-16 bg-foreground text-primary flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                            <Zap class="w-8 h-8" />
+                        </div>
+    
+                        <h3 class="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
+                            Industrial Electrical Systems
+                        </h3>
+    
+                        <p class="font-sans text-foreground/70 leading-relaxed mb-8">
+                            Complete high-voltage power distribution setups, commercial switchgear
+                            integration, step-down transformer installations, and synchronized backup
+                            generator power plants for manufacturing and industrial facilities.
+                        </p>
+    
+                        <div
+                            class="space-y-3 text-sm border-t border-grid pt-6 mb-8 text-foreground/80">
+                            <div class="flex items-center gap-2">
+                                <CircleCheck class="w-4 h-4 text-primary shrink-0" />
+                                <span>Heavy Duty Transformer Installation</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <CircleCheck class="w-4 h-4 text-primary shrink-0" />
+                                <span>Automatic Switchgear & Panelboards</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <CircleCheck class="w-4 h-4 text-primary shrink-0" />
+                                <span>Commercial Generator Synchronization</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <CircleCheck class="w-4 h-4 text-primary shrink-0" />
+                                <span>High-Voltage Power Grid Distribution</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <a
+                        href="#rfq"
+                        class="inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider text-foreground group-hover:text-primary transition-colors">
+                        Request Electrical Scope <ChevronRight class="w-4 h-4" />
+                    </a>
+                </div>
+            </div>
 
 			<!-- PILLAR 2: Commercial Construction -->
-			<div
-				class="gsap-service-card bg-white border border-grid p-10 flex flex-col justify-between hover:border-primary transition-all duration-300 shadow-sm group">
-				<div>
-					<div
-						class="w-16 h-16 bg-foreground text-primary flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-						<Building2 class="w-8 h-8" />
-					</div>
-
-					<span
-						class="font-mono text-xs text-primary uppercase tracking-widest mb-2 block"
-						>Pillar 02</span>
-					<h3 class="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
-						Commercial Construction
-					</h3>
-
-					<p class="font-sans text-foreground/70 leading-relaxed mb-8">
-						Turnkey commercial building development, multi-story structural concrete
-						framing, steel warehouse erection, retrofits, and full-scale architectural
-						general contracting for corporate and public sector clients.
-					</p>
-
-					<div
-						class="space-y-3 font-mono text-xs border-t border-grid pt-6 mb-8 text-foreground/80">
-						<div class="flex items-center gap-2">
-							<CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
-							<span>Structural Concrete & Foundation Framing</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
-							<span>Heavy Steel Structure Erection</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
-							<span>Industrial Warehouses & Business Parks</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
-							<span>General Contracting & Site Oversight</span>
-						</div>
-					</div>
-				</div>
-
-				<a
-					href="#rfq"
-					class="inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider text-foreground group-hover:text-primary transition-colors">
-					Request Construction Scope <ChevronRight class="w-4 h-4" />
-				</a>
-			</div>
+            <div class="gsap-service-card">
+                <div class="bg-white border border-grid p-10 flex flex-col justify-between hover:border-primary transition-all duration-300 shadow-sm group">
+                    <div>
+                        <div
+                            class="w-16 h-16 bg-foreground text-primary flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                            <Building2 class="w-8 h-8" />
+                        </div>
+    
+                        <h3 class="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
+                            Commercial Construction
+                        </h3>
+    
+                        <p class="font-sans text-foreground/70 leading-relaxed mb-8">
+                            Turnkey commercial building development, multi-story structural concrete
+                            framing, steel warehouse erection, retrofits, and full-scale architectural
+                            general contracting for corporate and public sector clients.
+                        </p>
+    
+                        <div
+                            class="space-y-3 text-sm border-t border-grid pt-6 mb-8 text-foreground/80">
+                            <div class="flex items-center gap-2">
+                                <CircleCheck class="w-4 h-4 text-primary shrink-0" />
+                                <span>Structural Concrete & Foundation Framing</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <CircleCheck class="w-4 h-4 text-primary shrink-0" />
+                                <span>Heavy Steel Structure Erection</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <CircleCheck class="w-4 h-4 text-primary shrink-0" />
+                                <span>Industrial Warehouses & Business Parks</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <CircleCheck class="w-4 h-4 text-primary shrink-0" />
+                                <span>General Contracting & Site Oversight</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <a
+                        href="#rfq"
+                        class="inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider text-foreground group-hover:text-primary transition-colors">
+                        Request Construction Scope <ChevronRight class="w-4 h-4" />
+                    </a>
+                </div>
+            </div>
 
 			<!-- PILLAR 3: Civil Engineering & Road Construction -->
-			<div
-				class="gsap-service-card bg-white border border-grid p-10 flex flex-col justify-between hover:border-primary transition-all duration-300 shadow-sm group">
-				<div>
-					<div
-						class="w-16 h-16 bg-foreground text-primary flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-						<Truck class="w-8 h-8" />
-					</div>
-
-					<span
-						class="font-mono text-xs text-primary uppercase tracking-widest mb-2 block"
-						>Pillar 03</span>
-					<h3 class="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
-						Civil Engineering & Roads
-					</h3>
-
-					<p class="font-sans text-foreground/70 leading-relaxed mb-8">
-						Major civil infrastructure development, road network paving, earthworks,
-						site leveling, storm water drainage engineering, and reinforced concrete
-						bridge structures built for heavy transit loads.
-					</p>
-
-					<div
-						class="space-y-3 font-mono text-xs border-t border-grid pt-6 mb-8 text-foreground/80">
-						<div class="flex items-center gap-2">
-							<CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
-							<span>Asphalt & Concrete Highway Paving</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
-							<span>Earthworks, Excavation & Site Grading</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
-							<span>Municipal Drainage & Retaining Structures</span>
-						</div>
-						<div class="flex items-center gap-2">
-							<CheckCircle2 class="w-4 h-4 text-primary shrink-0" />
-							<span>Bridge Deck & Heavy Transit Infrastructure</span>
-						</div>
-					</div>
-				</div>
-
-				<a
-					href="#rfq"
-					class="inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider text-foreground group-hover:text-primary transition-colors">
-					Request Civil Scope <ChevronRight class="w-4 h-4" />
-				</a>
-			</div>
+            <div class="gsap-service-card">
+                <div class="bg-white border border-grid p-10 flex flex-col justify-between hover:border-primary transition-all duration-300 shadow-sm group">
+                    <div>
+                        <div
+                            class="w-16 h-16 bg-foreground text-primary flex items-center justify-center mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                            <Truck class="w-8 h-8" />
+                        </div>
+    
+                        <h3 class="text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
+                            Civil Engineering & Roads
+                        </h3>
+    
+                        <p class="font-sans text-foreground/70 leading-relaxed mb-8">
+                            Major civil infrastructure development, road network paving, earthworks,
+                            site leveling, storm water drainage engineering, and reinforced concrete
+                            bridge structures built for heavy transit loads.
+                        </p>
+    
+                        <div
+                            class="space-y-3 text-sm border-t border-grid pt-6 mb-8 text-foreground/80">
+                            <div class="flex items-center gap-2">
+                                <CircleCheck class="w-4 h-4 text-primary shrink-0" />
+                                <span>Asphalt & Concrete Highway Paving</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <CircleCheck class="w-4 h-4 text-primary shrink-0" />
+                                <span>Earthworks, Excavation & Site Grading</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <CircleCheck class="w-4 h-4 text-primary shrink-0" />
+                                <span>Municipal Drainage & Retaining Structures</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <CircleCheck class="w-4 h-4 text-primary shrink-0" />
+                                <span>Bridge Deck & Heavy Transit Infrastructure</span>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <a
+                        href="#rfq"
+                        class="inline-flex items-center gap-2 font-display text-sm uppercase tracking-wider text-foreground group-hover:text-primary transition-colors">
+                        Request Civil Scope <ChevronRight class="w-4 h-4" />
+                    </a>
+                </div>
+            </div>
 		</div>
 	</div>
 </section>
@@ -508,30 +498,30 @@
 			</div>
 
 			<!-- Filter Controls -->
-			<div class="flex flex-wrap gap-2 font-mono text-xs uppercase">
+			<div class="flex flex-wrap gap-2 text-xs uppercase">
 				<button
-					on:click={() => (activeTab = "all")}
+					onclick={() => (activeTab = "all")}
 					class="px-5 py-3 border transition-colors {activeTab === 'all'
 						? 'bg-primary border-primary text-white'
 						: 'border-white/20 text-white/70 hover:border-white'}">
 					All Scope
 				</button>
 				<button
-					on:click={() => (activeTab = "electrical")}
+					onclick={() => (activeTab = "electrical")}
 					class="px-5 py-3 border transition-colors {activeTab === 'electrical'
 						? 'bg-primary border-primary text-white'
 						: 'border-white/20 text-white/70 hover:border-white'}">
 					Electrical
 				</button>
 				<button
-					on:click={() => (activeTab = "construction")}
+					onclick={() => (activeTab = "construction")}
 					class="px-5 py-3 border transition-colors {activeTab === 'construction'
 						? 'bg-primary border-primary text-white'
 						: 'border-white/20 text-white/70 hover:border-white'}">
 					Construction
 				</button>
 				<button
-					on:click={() => (activeTab = "civil")}
+					onclick={() => (activeTab = "civil")}
 					class="px-5 py-3 border transition-colors {activeTab === 'civil'
 						? 'bg-primary border-primary text-white'
 						: 'border-white/20 text-white/70 hover:border-white'}">
@@ -543,56 +533,57 @@
 		<!-- Projects Grid -->
 		<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 			{#each filteredProjects as project (project.id)}
-				<div
-					class="gsap-project-card bg-white/5 border border-white/10 overflow-hidden flex flex-col justify-between hover:border-primary transition-all duration-300 group">
-					<div>
-						<!-- Media Aspect Container -->
-						<div class="aspect-[16/10] relative overflow-hidden bg-foreground/50">
-							<img
-								src={project.image}
-								alt={project.title}
-								class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
-							<div
-								class="absolute top-4 left-4 bg-foreground/90 text-primary font-mono text-xs px-3 py-1 border border-white/10 uppercase">
-								{project.categoryLabel}
-							</div>
-						</div>
-
-						<div class="p-8">
-							<div
-								class="flex justify-between items-center text-white/40 font-mono text-xs mb-3">
-								<span>{project.location}</span>
-								<span>COMPLETED {project.year}</span>
-							</div>
-
-							<h3
-								class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors">
-								{project.title}
-							</h3>
-
-							<p class="font-sans text-white/70 text-sm leading-relaxed mb-6">
-								{project.description}
-							</p>
-						</div>
-					</div>
-
-					<!-- Technical Metrics Bar (JetBrains Mono) -->
-					<div
-						class="p-6 bg-black/40 border-t border-white/10 grid grid-cols-3 gap-2 font-mono text-xs text-white/60">
-						<div>
-							<span class="block text-white/30 uppercase text-[10px]">Spec</span>
-							<span class="text-white font-bold">{project.metrics.primary}</span>
-						</div>
-						<div>
-							<span class="block text-white/30 uppercase text-[10px]">Detail</span>
-							<span class="text-white">{project.metrics.secondary}</span>
-						</div>
-						<div>
-							<span class="block text-white/30 uppercase text-[10px]">Scale</span>
-							<span class="text-primary font-bold">{project.metrics.scale}</span>
-						</div>
-					</div>
-				</div>
+                <div class="gsap-project-card">
+                    <div class="bg-white/5 border border-white/10 overflow-hidden flex flex-col justify-between hover:border-primary transition-all duration-300 group">
+                        <div>
+                            <!-- Media Aspect Container -->
+                            <div class="aspect-[16/10] relative overflow-hidden bg-foreground/50">
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105" />
+                                <div
+                                    class="absolute top-4 left-4 bg-foreground/90 text-primary text-xs px-3 py-1 border border-white/10 uppercase">
+                                    {project.categoryLabel}
+                                </div>
+                            </div>
+    
+                            <div class="p-8">
+                                <div
+                                    class="flex justify-between items-center text-white/40 text-xs mb-3">
+                                    <span>{project.location}</span>
+                                    <span>COMPLETED {project.year}</span>
+                                </div>
+    
+                                <h3
+                                    class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors">
+                                    {project.title}
+                                </h3>
+    
+                                <p class="font-sans text-white/70 text-sm leading-relaxed mb-6">
+                                    {project.description}
+                                </p>
+                            </div>
+                        </div>
+    
+                        <!-- Technical Metrics Bar (JetBrains Mono) -->
+                        <div
+                            class="p-6 bg-black/40 border-t border-white/10 grid grid-cols-3 gap-2 text-xs text-white/60">
+                            <div>
+                                <span class="block text-white/30 uppercase text-[10px]">Spec</span>
+                                <span class="text-white font-bold">{project.metrics.primary}</span>
+                            </div>
+                            <div>
+                                <span class="block text-white/30 uppercase text-[10px]">Detail</span>
+                                <span class="text-white">{project.metrics.secondary}</span>
+                            </div>
+                            <div>
+                                <span class="block text-white/30 uppercase text-[10px]">Scale</span>
+                                <span class="text-primary font-bold">{project.metrics.scale}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 			{/each}
 		</div>
 	</div>
@@ -609,12 +600,12 @@
 				<div class="border-2 border-foreground p-3 bg-white shadow-xl relative z-10">
 					<div class="aspect-[4/3] overflow-hidden">
 						<img
-							src="IMG-20260611-WA0007.jpg"
+							src="sitepose.jpeg"
 							alt="Caribbian International Engineers Conduct Site Safety Inspection"
 							class="w-full h-full object-cover" />
 					</div>
 					<div
-						class="p-4 bg-foreground text-background font-mono text-xs mt-3 flex justify-between items-center">
+						class="p-4 bg-foreground text-background text-xs mt-3 flex justify-between items-center">
 						<span>FIELD OPERATIONS VERIFICATION</span>
 						<span class="text-primary font-bold">100% SITE AUDITED</span>
 					</div>
@@ -629,7 +620,7 @@
 			<!-- Right Content Block -->
 			<div class="lg:col-span-7 space-y-8 gsap-safety-content">
 				<div
-					class="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 font-mono text-xs uppercase tracking-wider">
+					class="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 text-xs uppercase tracking-wider">
 					<ShieldCheck class="w-4 h-4" /> Zero-Harm Safety Protocol
 				</div>
 
@@ -667,15 +658,15 @@
 					</p>
 					<div class="flex flex-wrap gap-4 opacity-80">
 						<div
-							class="px-4 py-2 border border-grid font-mono text-xs uppercase bg-white">
+							class="px-4 py-2 border border-grid text-xs uppercase bg-white">
 							National Engineers Board
 						</div>
 						<div
-							class="px-4 py-2 border border-grid font-mono text-xs uppercase bg-white">
+							class="px-4 py-2 border border-grid text-xs uppercase bg-white">
 							Public Procurement Registry
 						</div>
 						<div
-							class="px-4 py-2 border border-grid font-mono text-xs uppercase bg-white">
+							class="px-4 py-2 border border-grid text-xs uppercase bg-white">
 							ISO 9001:2015 Standards
 						</div>
 					</div>
@@ -739,15 +730,16 @@
 		<div class="bg-white border border-grid p-8 md:p-16 shadow-xl relative">
 			<form
 				class="space-y-8"
-				on:submit|preventDefault={() =>
+				onsubmit={(e) => {
+                    e.preventDefault()
 					alert(
 						"Tender document submitted. Our estimation engineering desk will contact you within 24 hours.",
-					)}>
+					)}}>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 					<div class="space-y-2">
 						<label
 							for="organization"
-							class="block font-mono text-xs uppercase text-foreground/70"
+							class="block text-xs uppercase text-foreground/70"
 							>Organization / Client Name *</label>
 						<input
 							type="text"
@@ -760,7 +752,7 @@
 					<div class="space-y-2">
 						<label
 							for="contact-email"
-							class="block font-mono text-xs uppercase text-foreground/70"
+							class="block text-xs uppercase text-foreground/70"
 							>Official Email Address *</label>
 						<input
 							type="email"
@@ -775,7 +767,7 @@
 					<div class="space-y-2">
 						<label
 							for="tender-ref"
-							class="block font-mono text-xs uppercase text-foreground/70"
+							class="block text-xs uppercase text-foreground/70"
 							>Tender Ref / Project ID (Optional)</label>
 						<input
 							type="text"
@@ -787,7 +779,7 @@
 					<div class="space-y-2">
 						<label
 							for="primary-scope"
-							class="block font-mono text-xs uppercase text-foreground/70"
+							class="block text-xs uppercase text-foreground/70"
 							>Primary Service Discipline *</label>
 						<select
 							id="primary-scope"
@@ -805,7 +797,7 @@
 				<div class="space-y-2">
 					<label
 						for="project-details"
-						class="block font-mono text-xs uppercase text-foreground/70"
+						class="block text-xs uppercase text-foreground/70"
 						>Project Summary / Scope Details</label>
 					<textarea
 						id="project-details"
@@ -817,7 +809,7 @@
 
 				<!-- File Upload Dropzone -->
 				<div class="space-y-2">
-					<span class="block font-mono text-xs uppercase text-foreground/70"
+					<span class="block text-xs uppercase text-foreground/70"
 						>Attach Scope / BOQ / Tender Drawings (PDF, XLSX)</span>
 					<div
 						class="border-2 border-dashed border-grid p-10 text-center hover:bg-foreground/5 hover:border-primary transition-all duration-300 cursor-pointer group">

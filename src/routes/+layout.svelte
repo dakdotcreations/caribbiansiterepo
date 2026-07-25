@@ -18,9 +18,9 @@
 
     import gsap from "gsap";
     import ScrollSmoother from "gsap/dist/ScrollSmoother";
-	import { useGsap } from "$lib/utils/useGsap"
+	import { onMount } from "svelte"
 
-    useGsap(() => {
+    onMount(() => {
         gsap.registerPlugin(ScrollSmoother);
 
         ScrollSmoother.create({
@@ -50,7 +50,7 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-<div class="min-h-screen flex flex-col relative selection:bg-primary selection:text-white">
+<div class="min-h-screen flex flex-col relative selection:bg-primary selection:text-white" id="smooth-wrapper">
 	<!-- Corporate Top Utility Bar -->
 	<div class="bg-foreground text-background text-xs font-mono py-2.5 px-6 border-b border-white/10 hidden lg:block">
 		<div class="container mx-auto flex justify-between items-center">
@@ -169,7 +169,7 @@
 	</header>
 
 	<!-- Main Viewport -->
-	<main class="grow">
+	<main class="grow" id="smooth-content">
 		{@render children()}
 	</main>
 	<!-- Global Enterprise Corporate Footer (Turner/Kiewit Architecture) -->
@@ -265,11 +265,11 @@
 						</p>
 						<p class="flex items-center gap-2">
 							<Phone class="w-4 h-4 text-primary shrink-0" />
-							<span>+256 (0) 414 000 000</span>
+							<span>+256 (740) 000 000</span>
 						</p>
 						<p class="flex items-center gap-2">
 							<Mail class="w-4 h-4 text-primary shrink-0" />
-							<span>bids@caribbian.com</span>
+							<span>contact@caribbianinternational.com</span>
 						</p>
 					</div>
 				</div>
