@@ -1,25 +1,18 @@
-<script>
-	import { onMount } from "svelte"
+<script lang="ts">
 	import gsap from "gsap"
-	import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 	import {
 		Zap,
 		Building2,
 		HardHat,
 		ShieldCheck,
 		ArrowUpRight,
-		FileText,
 		ChevronRight,
 		Download,
 		CircleCheck,
 		Truck,
-		Users,
-		Layers,
-		Award,
 		Briefcase,
 		Upload,
 		Calendar,
-		Gauge,
 	} from "@lucide/svelte"
 	import { useGsap } from "$lib/utils/useGsap"
 
@@ -81,7 +74,7 @@
         activeTab === 'all'
             ? projects
             : projects.filter((p) => p.category === activeTab)
-        );
+        )
 
 	useGsap(() => {
 		// Hero Text Staggered Reveal
@@ -598,7 +591,7 @@
 			<!-- Left Visual: Civil Engineers on Site in Full PPE -->
 			<div class="lg:col-span-5 relative">
 				<div class="border-2 border-foreground p-3 bg-white shadow-xl relative z-10">
-					<div class="aspect-[4/3] overflow-hidden">
+					<div class="aspect-4/3 overflow-hidden">
 						<img
 							src="sitepose.jpeg"
 							alt="Caribbian International Engineers Conduct Site Safety Inspection"

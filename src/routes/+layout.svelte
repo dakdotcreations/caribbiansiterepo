@@ -2,18 +2,13 @@
 	import "./layout.css"
 	import favicon from "$lib/assets/favicon.svg"
 	import {
-		Building2,
-		Zap,
-		HardHat,
 		Phone,
 		Mail,
 		MapPin,
 		ArrowUpRight,
 		Menu,
 		X,
-		FileText,
 		ShieldCheck,
-		Download,
 	} from "@lucide/svelte"
 
     import gsap from "gsap";
