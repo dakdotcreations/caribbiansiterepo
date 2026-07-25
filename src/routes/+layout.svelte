@@ -52,8 +52,7 @@
 
 <div class="min-h-screen flex flex-col relative selection:bg-primary selection:text-white">
 	<!-- Corporate Top Utility Bar -->
-	<div
-		class="bg-foreground text-background text-xs font-mono py-2.5 px-6 border-b border-white/10 hidden lg:block">
+	<div class="bg-foreground text-background text-xs font-mono py-2.5 px-6 border-b border-white/10 hidden lg:block">
 		<div class="container mx-auto flex justify-between items-center">
 			<div class="flex items-center gap-8">
 				<span class="flex items-center gap-2 text-white/70">
@@ -66,30 +65,25 @@
 				</span>
 			</div>
 			<div class="flex items-center gap-6">
-				<a
-					href="mailto:procurement@caribbian.com"
+				<a href="mailto:contact@caribbianinternational.com"
 					class="text-white/70 hover:text-primary transition-colors flex items-center gap-1.5">
-					<Mail class="w-3.5 h-3.5" /> Bids: procurement@caribbian.com
+					<Mail class="w-3.5 h-3.5" /> contact@caribbianinternational.com
 				</a>
 				<a
 					href="tel:+256000000000"
 					class="text-white/70 hover:text-primary transition-colors flex items-center gap-1.5">
-					<Phone class="w-3.5 h-3.5" /> Direct: +256 (0) 414 000 000
+					<Phone class="w-3.5 h-3.5" /> Direct: +256 (740) 000 000
 				</a>
 			</div>
 		</div>
 	</div>
 
 	<!-- Primary Enterprise Header -->
-	<header
-		class="sticky top-0 bg-background/95 backdrop-blur-md border-b border-grid z-50 transition-all duration-300">
+	<header class="sticky top-0 bg-background/95 backdrop-blur-md border-b border-grid z-50 transition-all duration-300">
 		<div class="container mx-auto px-6 h-22 flex items-center justify-between">
 			<!-- Brand Logo & Identity -->
 			<a href="/" class="flex items-center gap-4 group">
-				<div
-					class="w-12 h-12 bg-foreground group-hover:bg-primary transition-colors duration-300 flex items-center justify-center text-white font-display font-bold text-2xl tracking-tighter">
-					CI
-				</div>
+                <img src="logo.png" alt="logo" class="h-16">
 				<div class="flex flex-col">
 					<span
 						class="font-display text-2xl font-bold leading-none tracking-tight text-foreground group-hover:text-primary transition-colors">
@@ -104,32 +98,23 @@
 
 			<!-- Desktop Navigation Links -->
 			<nav class="hidden lg:flex items-center gap-10 font-sans font-medium text-sm">
-				<a
-					href="#services"
-					class="hover:text-primary transition-colors py-2 uppercase tracking-wider text-xs font-mono"
-					>Services & Disciplines</a>
-				<a
-					href="#projects"
-					class="hover:text-primary transition-colors py-2 uppercase tracking-wider text-xs font-mono"
-					>Project Portfolio</a>
-				<a
-					href="#safety"
-					class="hover:text-primary transition-colors py-2 uppercase tracking-wider text-xs font-mono"
-					>Safety & Operational Excellence</a>
-				<a
-					href="#subcontractors"
-					class="hover:text-primary transition-colors py-2 uppercase tracking-wider text-xs font-mono"
-					>Subcontractors & Partners</a>
+				<a href="#services"
+					class="hover:text-primary transition-colors py-2 uppercase tracking-wider text-xs font-mono">Services</a>
+				<a href="#projects"
+					class="hover:text-primary transition-colors py-2 uppercase tracking-wider text-xs font-mono">Projects</a>
+				<a href="#safety"
+					class="hover:text-primary transition-colors py-2 uppercase tracking-wider text-xs font-mono">Operational Safety</a>
+				<a href="#subcontractors"
+					class="hover:text-primary transition-colors py-2 uppercase tracking-wider text-xs font-mono">Partners</a>
 			</nav>
 
 			<!-- Action Callouts -->
 			<div class="hidden lg:flex items-center gap-4">
-				<a
-					href="/company-profile.pdf"
+				<!-- <a href="/company-profile.pdf"
 					download
 					class="border border-foreground/20 hover:border-foreground text-foreground px-5 py-3 font-mono text-xs uppercase tracking-wider flex items-center gap-2 hover:bg-foreground hover:text-white transition-all duration-300">
 					<Download class="w-3.5 h-3.5" /> Capabilities PDF
-				</a>
+				</a> -->
 				<a
 					href="#rfq"
 					class="bg-primary hover:bg-primary-dark text-white font-display text-sm uppercase tracking-wider px-6 py-3 transition-colors duration-300 flex items-center gap-2">
@@ -138,8 +123,7 @@
 			</div>
 
 			<!-- Mobile Menu Button -->
-			<button
-				on:click={toggleMobileMenu}
+			<button onclick={toggleMobileMenu}
 				class="lg:hidden text-foreground p-2 focus:outline-none"
 				aria-label="Toggle Navigation">
 				{#if isMobileMenuOpen}
@@ -152,36 +136,30 @@
 
 		<!-- Mobile Dropdown Menu -->
 		{#if isMobileMenuOpen}
-			<div
-				class="lg:hidden bg-background border-b border-grid px-6 py-8 space-y-6 animate-in slide-in-from-top duration-300">
+			<div class="lg:hidden bg-background border-b border-grid px-6 py-8 space-y-6 animate-in slide-in-from-top duration-300">
 				<nav class="flex flex-col space-y-4 font-mono text-sm uppercase tracking-wider">
-					<a
-						href="#services"
-						on:click={toggleMobileMenu}
-						class="text-foreground hover:text-primary">Services & Disciplines</a>
-					<a
-						href="#projects"
-						on:click={toggleMobileMenu}
-						class="text-foreground hover:text-primary">Project Portfolio</a>
-					<a
-						href="#safety"
-						on:click={toggleMobileMenu}
-						class="text-foreground hover:text-primary">Safety & Operations</a>
-					<a
-						href="#subcontractors"
-						on:click={toggleMobileMenu}
-						class="text-foreground hover:text-primary">Subcontractors & Partners</a>
+					<a href="#services"
+						onclick={toggleMobileMenu}
+						class="text-foreground hover:text-primary">Services</a>
+					<a href="#projects"
+						onclick={toggleMobileMenu}
+						class="text-foreground hover:text-primary">Projects</a>
+					<a href="#safety"
+						onclick={toggleMobileMenu}
+						class="text-foreground hover:text-primary">Operational Safety</a>
+					<a href="#subcontractors"
+						onclick={toggleMobileMenu}
+						class="text-foreground hover:text-primary">Partners</a>
 				</nav>
 				<div class="pt-6 border-t border-grid flex flex-col space-y-3">
-					<a
-						href="/company-profile.pdf"
+					<!-- <a href="/company-profile.pdf"
 						download
 						class="border border-foreground text-center py-3 font-mono text-xs uppercase tracking-wider">
 						Download Company Profile
-					</a>
+					</a> -->
 					<a
 						href="#rfq"
-						on:click={toggleMobileMenu}
+						onclick={toggleMobileMenu}
 						class="bg-primary text-white text-center py-3 font-display uppercase tracking-wider text-sm">
 						Request Proposal / Bid
 					</a>
@@ -191,33 +169,27 @@
 	</header>
 
 	<!-- Main Viewport -->
-	<main class="flex-grow">
+	<main class="grow">
 		{@render children()}
 	</main>
 	<!-- Global Enterprise Corporate Footer (Turner/Kiewit Architecture) -->
-	<footer
-		class="bg-foreground text-background pt-24 pb-12 border-t-8 border-primary relative overflow-hidden">
+	<footer class="bg-foreground text-background pt-24 pb-12 border-t-8 border-primary relative overflow-hidden">
 		<div class="container mx-auto px-6">
 			<div
 				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16 border-b border-white/10">
 				<!-- Col 1: Brand Info -->
 				<div class="lg:col-span-2 space-y-6">
 					<div class="flex items-center gap-3">
-						<div
-							class="w-10 h-10 bg-primary text-white font-display font-bold text-xl flex items-center justify-center">
-							CI
-						</div>
-						<span class="font-display text-2xl text-white tracking-wider"
-							>CARIBBIAN INTERNATIONAL</span>
+						<span class="font-display text-2xl text-white hover:text-primary tracking-wider">CARIBBIAN INTERNATIONAL</span>
 					</div>
 					<p class="font-sans text-white/70 text-base leading-relaxed max-w-md">
 						Delivering major commercial building developments, high-capacity industrial
 						power grids, and vital civil infrastructure across regional commercial hubs.
 					</p>
-					<div class="font-mono text-xs text-white/40 space-y-1">
+					<!-- <div class="font-mono text-xs text-white/40 space-y-1">
 						<p>REGISTRATION NO: REG-2014-998271</p>
 						<p>VAT TIN REGISTERED • PUBLIC WORK CERTIFIED</p>
-					</div>
+					</div> -->
 				</div>
 
 				<!-- Col 2: Core Services -->
@@ -310,9 +282,9 @@
 					© {new Date().getFullYear()} Caribbian International Ltd. All Rights Reserved.
 				</p>
 				<div class="flex gap-6">
-					<a href="#" class="hover:text-white transition-colors">Terms of Compliance</a>
-					<a href="#" class="hover:text-white transition-colors">Privacy Standard</a>
-					<a href="#" class="hover:text-white transition-colors">Site Index</a>
+					<!-- <a href="#" class="hover:text-white transition-colors">Terms of Compliance</a> -->
+					<!-- <a href="#" class="hover:text-white transition-colors">Privacy Standard</a> -->
+					<a href="dakdot.com" target="_blank" class="hover:text-white transition-colors">Powered by DakDot</a>
 				</div>
 			</div>
 		</div>
