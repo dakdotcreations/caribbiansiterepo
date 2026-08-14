@@ -7,7 +7,6 @@
 		ShieldCheck,
 		ArrowUpRight,
 		ChevronRight,
-		Download,
 		CircleCheck,
 		Truck,
 		Briefcase,
@@ -188,10 +187,10 @@
 
 				<!-- CTA Action Cluster -->
 				<div class="gsap-hero-sub flex flex-wrap gap-5 pt-4">
-					<a href="#rfq"
+					<!-- <a href="#rfq"
 						class="bg-primary hover:bg-primary-dark text-white font-display text-lg uppercase tracking-wider px-8 py-5 transition-all duration-300 flex items-center gap-3 shadow-lg shadow-primary/20">
 						Submit Project Tender <ArrowUpRight class="w-5 h-5" />
-					</a>
+					</a> -->
 					<a href="#services"
 						class="border border-white/30 hover:border-white text-white font-display text-lg uppercase tracking-wider px-8 py-5 hover:bg-white hover:text-foreground transition-all duration-300">
 						Explore Capabilities
@@ -679,25 +678,19 @@
 			<div class="space-y-4 max-w-2xl">
 				<span class="font-mono text-xs uppercase tracking-widest text-primary"
 					>Partner Ecosystem</span>
-				<h3 class="text-4xl md:text-5xl font-bold">SUBCONTRACTORS & MATERIAL SUPPLIERS</h3>
+				<h3 class="text-4xl md:text-5xl font-bold">WORK WITH OUR TEAM.</h3>
 				<p class="font-sans text-foreground/70 leading-relaxed">
 					We partner with specialized trades, equipment operators, and certified material
-					vendors across our civil, structural, and high-voltage electrical projects.
-					Register your firm to be included in our preferred bidding pool.
+					vendors across our civil, structural, and high-voltage electrical projects. Tell us
+					about your capability and we will connect you with the right team.
 				</p>
 			</div>
 
-			<div class="shrink-0 flex flex-col sm:flex-row gap-4 w-full lg:w-auto">
+			<div class="shrink-0 w-full lg:w-auto">
 				<a
-					href="#rfq"
-					class="border border-foreground hover:bg-foreground hover:text-white px-8 py-5 font-display text-sm uppercase tracking-wider text-center transition-colors">
-					Vendor Registration
-				</a>
-				<a
-					href="/company-profile.pdf"
-					download
+					href="/contact#enquiry"
 					class="bg-primary hover:bg-primary-dark text-white px-8 py-5 font-display text-sm uppercase tracking-wider text-center transition-colors flex items-center justify-center gap-2">
-					<Download class="w-4 h-4" /> Download Prequalification PDF
+					Start a conversation <ArrowUpRight class="w-4 h-4" />
 				</a>
 			</div>
 		</div>
@@ -707,7 +700,7 @@
 <!-- =================================================================== -->
 <!-- RFQ / TENDER SUBMISSION DESK (Bidding & Contracting Portal) -->
 <!-- =================================================================== -->
-<section id="rfq" class="py-32 bg-background relative">
+<section id="rfq" class="py-32 bg-background relative hidden">
 	<div class="container mx-auto px-6 max-w-5xl">
 		<div class="text-center space-y-4 mb-16">
 			<span class="font-mono text-xs uppercase tracking-widest text-primary"

@@ -1,38 +1,63 @@
-// useGsap.ts
 import { onMount, onDestroy } from "svelte";
 
-let gsapPromise: Promise<any> | null = null;
+type GsapModules = {
+    gsap: typeof import("gsap").default;
+    ScrollTrigger: any;
+    ScrollSmoother: any;
+    SplitText: any;
+};
 
-export async function loadGsap() {
+let gsapPromise: Promise<GsapModules> | null = null;
+
+async function loadGsap(): Promise<GsapModules> {
     if (!gsapPromise) {
         gsapPromise = (async () => {
-            const gsapModule = await import("gsap");
-            const ScrollTriggerModule = await import("gsap/dist/ScrollTrigger");
-            const SplitTextModule = await import("gsap/dist/SplitText");
-            
-            const gsap = gsapModule.default;
-            const ScrollTrigger = ScrollTriggerModule.default;
-            const SplitText = SplitTextModule.default;
-            
-            gsap.registerPlugin(ScrollTrigger, SplitText);
-            
-            return { gsap, ScrollTrigger, SplitText };
+            // Parallelize module loading
+            const [
+                gsapModule,
+                ScrollTriggerModule,
+                ScrollSmootherModule,
+                SplitTextModule
+            ] = await Promise.all([
+                import("gsap"),
+                import("gsap/ScrollTrigger"),
+                import("gsap/ScrollSmoother"), // Requires GSAP Club membership / package setup
+                import("gsap/SplitText")
+            ]);
+
+            const gsap = gsapModule.default || gsapModule;
+            const ScrollTrigger = ScrollTriggerModule.default || ScrollTriggerModule;
+            const ScrollSmoother = ScrollSmootherModule.default || ScrollSmootherModule;
+            const SplitText = SplitTextModule.default || SplitTextModule;
+
+            // ScrollSmoother requires ScrollTrigger to be registered alongside it
+            gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+
+            return { gsap, ScrollTrigger, ScrollSmoother, SplitText };
         })();
     }
     return gsapPromise;
 }
 
-export function useGsap(setup: () => (() => void) | void) {
-    let cleanup: (() => void) | void;
+export function useGsap(
+    setup: (deps: GsapModules) => (() => void) | void,
+    scope?: HTMLElement | string
+) {
+    let userCleanup: (() => void) | void;
+    let ctx: gsap.Context | null = null;
 
     onMount(async () => {
-        await loadGsap(); // Just ensure GSAP is loaded
-        cleanup = setup();
-        const { ScrollTrigger } = await loadGsap();
-        ScrollTrigger.refresh();
+        const deps = await loadGsap();
+
+        ctx = deps.gsap.context(() => {
+            userCleanup = setup(deps);
+        }, scope);
+
+        deps.ScrollTrigger.refresh();
     });
 
     onDestroy(() => {
-        cleanup?.();
+        userCleanup?.();
+        ctx?.revert(); // Automatically kills ScrollSmoother instances created inside ctx
     });
 }
